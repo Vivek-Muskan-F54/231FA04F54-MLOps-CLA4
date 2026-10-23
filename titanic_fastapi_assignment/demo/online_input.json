@@ -1,0 +1,10 @@
+{
+  "PassengerId": 815,
+  "Pclass": 3,
+  "Age": 30.5,
+  "SibSp": 0,
+  "Parch": 0,
+  "Fare": 8.05,
+  "Sex": "male",
+  "Embarked": "S"
+}

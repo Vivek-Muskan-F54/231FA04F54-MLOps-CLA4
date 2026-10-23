@@ -1,0 +1,50 @@
+{
+  "health": {
+    "status": "ok",
+    "model_loaded": true
+  },
+  "health_status_code": 200,
+  "valid_request": {
+    "PassengerId": 815,
+    "Pclass": 3,
+    "Age": 30.5,
+    "SibSp": 0,
+    "Parch": 0,
+    "Fare": 8.05,
+    "Sex": "male",
+    "Embarked": "S"
+  },
+  "valid_status_code": 200,
+  "valid_response": {
+    "PassengerId": 815,
+    "predicted_survival": 0,
+    "prediction": "Did not survive"
+  },
+  "invalid_request": {
+    "PassengerId": 815,
+    "Pclass": 4,
+    "Age": 30.5,
+    "SibSp": 0,
+    "Parch": 0,
+    "Fare": 8.05,
+    "Sex": "male",
+    "Embarked": "S"
+  },
+  "invalid_status_code": 422,
+  "invalid_response": {
+    "detail": [
+      {
+        "type": "less_than_equal",
+        "loc": [
+          "body",
+          "Pclass"
+        ],
+        "msg": "Input should be less than or equal to 3",
+        "input": 4,
+        "ctx": {
+          "le": 3
+        }
+      }
+    ]
+  }
+}

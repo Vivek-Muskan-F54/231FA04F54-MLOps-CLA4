@@ -1,0 +1,20 @@
+{
+  "batch_inference.png": {
+    "bytes": 96033
+  },
+  "fastapi_health_swagger.png": {
+    "bytes": 71563
+  },
+  "fastapi_predict_invalid_swagger.png": {
+    "bytes": 147035
+  },
+  "fastapi_predict_valid_swagger.png": {
+    "bytes": 137655
+  },
+  "online_inference.png": {
+    "bytes": 57037
+  },
+  "streaming_inference.png": {
+    "bytes": 75390
+  }
+}

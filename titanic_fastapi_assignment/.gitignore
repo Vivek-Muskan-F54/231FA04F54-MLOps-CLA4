@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.DS_Store
+# Kaggle competition data is downloaded by the recipient under its own access/terms.
+data/train.csv

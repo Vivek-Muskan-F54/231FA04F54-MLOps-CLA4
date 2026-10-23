@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Titanic Model Serving — Observations</title>
+<style>
+@page { size: A4; margin: 17mm 19mm; }
+* { box-sizing: border-box; }
+body { font-family: "Liberation Sans", Arial, sans-serif; color: #1e293b; font-size: 10.5pt; line-height: 1.42; margin: 0; }
+header { background: #102a43; color: #fff; padding: 21px 24px 18px; border-radius: 8px; margin-bottom: 18px; }
+.kicker { color: #9ed8e5; text-transform: uppercase; letter-spacing: 1.4px; font-size: 8.5pt; font-weight: bold; }
+h1 { font-size: 22pt; line-height: 1.1; margin: 7px 0 6px; }
+.subtitle { color: #dbeafe; font-size: 10pt; }
+.stats { display: flex; gap: 10px; margin: 14px 0 18px; }
+.stat { flex: 1; padding: 12px; background: #eef5fa; border-radius: 7px; border-left: 4px solid #168aad; }
+.stat strong { display: block; font-size: 17pt; color: #102a43; }
+.stat span { font-size: 8.5pt; color: #486581; }
+h2 { color: #102a43; font-size: 14pt; margin: 14px 0 6px; border-bottom: 1px solid #d9e2ec; padding-bottom: 4px; }
+section { margin-bottom: 11px; break-inside: avoid; }
+.q { font-weight: bold; color: #0b7285; margin: 0 0 3px; }
+p { margin: 0 0 5px; }
+.note { margin-top: 14px; background: #f6f8fb; border: 1px solid #d9e2ec; border-radius: 7px; padding: 10px 12px; font-size: 9pt; }
+footer { border-top: 1px solid #d9e2ec; margin-top: 15px; padding-top: 7px; font-size: 8pt; color: #627d98; }
+a { color: #167d9a; }
+</style></head><body>
+<header><div class="kicker">Machine Learning · Model Deployment</div><h1>Titanic Survival Prediction</h1><div class="subtitle">Inference strategies, model serving, and observations</div></header>
+<div class="stats">
+  <div class="stat"><strong>{{ACCURACY}}</strong><span>Stratified hold-out accuracy · {{TEST_SIZE}} passengers</span></div>
+  <div class="stat"><strong>{{TRAIN_SIZE}}</strong><span>Training passengers · one model fit</span></div>
+  <div class="stat"><strong>1 / 20 / 10</strong><span>Online · batch · streaming records</span></div>
+</div>
+<h2>Observations</h2>
+<section><p class="q">1. How does Online Inference differ from Batch Inference?</p><p>Online inference returns a prediction for one request or record at a time, which is useful when an individual result is needed immediately. Batch inference submits many records together and returns their predictions in one operation, making repeated or scheduled workloads more efficient.</p></section>
+<section><p class="q">2. What is the difference between Streaming Inference and Batch Inference?</p><p>Streaming inference consumes arriving records incrementally and produces a result for each record as it arrives. Batch inference waits until a fixed group has been collected, then processes that group together. This project simulates a stream by handling ten held-out passengers sequentially with a one-second interval.</p></section>
+<section><p class="q">3. Why is FastAPI used for model serving?</p><p>FastAPI exposes the trained pipeline through standard HTTP endpoints, provides request validation with Pydantic, and automatically documents and tests the API through Swagger UI at <code>/docs</code>. This lets another application request predictions without importing or retraining the model itself.</p></section>
+<section><p class="q">4. Why should the same trained model be reused for all inference strategies?</p><p>Reusing one saved pipeline keeps preprocessing and learned parameters consistent across online, batch, streaming, and API predictions. It makes results comparable, avoids unnecessary retraining, and reduces the risk that different code paths use mismatched transformations or model versions.</p></section>
+<div class="note"><b>Evaluation and data handling.</b> The complete preprocessing-and-classification pipeline was fit once using a stratified 80/20 split of the official Kaggle Titanic <code>train.csv</code>. Accuracy is measured only on the 20% held-out test split. The 31 demonstration records are drawn from that held-out split, are disjoint across strategies, and are passed to inference without the outcome label. The Kaggle source data is not redistributed in this package.</div>
+<footer>Dataset source: Kaggle, “Titanic - Machine Learning from Disaster,” <a href="https://www.kaggle.com/competitions/titanic/data">official competition data page</a>. Metric: accuracy = correct held-out predictions / held-out records.</footer>
+</body></html>

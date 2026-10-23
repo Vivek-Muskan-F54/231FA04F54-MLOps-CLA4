@@ -1,0 +1,8 @@
+TRAINING COMPLETE
+Dataset rows: 891 | train: 712 | held-out test: 179
+Stratified hold-out accuracy: 0.8045 (80.45%)
+Pipeline saved: /home/ubuntu/titanic_fastapi_assignment/model.pkl
+Held-out demos: online=1, batch=20, streaming=10 (disjoint; target excluded)
+Confusion matrix [true 0/1 rows, predicted 0/1 columns]:
+[[98 12]
+ [23 46]]

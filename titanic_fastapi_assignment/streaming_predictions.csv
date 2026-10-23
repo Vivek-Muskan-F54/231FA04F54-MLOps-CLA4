@@ -1,0 +1,11 @@
+sequence,PassengerId,predicted_survival,prediction
+1,39,1,Survived
+2,412,0,Did not survive
+3,865,0,Did not survive
+4,502,1,Survived
+5,824,1,Survived
+6,352,0,Did not survive
+7,505,1,Survived
+8,533,0,Did not survive
+9,699,0,Did not survive
+10,72,0,Did not survive

@@ -1,0 +1,6 @@
+ONLINE INFERENCE — one held-out passenger
+{
+  "PassengerId": 815,
+  "predicted_survival": 0,
+  "prediction": "Did not survive"
+}

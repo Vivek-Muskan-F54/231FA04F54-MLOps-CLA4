@@ -1,0 +1,12 @@
+STREAMING INFERENCE — one held-out passenger per second
+[01/10] PassengerId=39 -> 1 (Survived)
+[02/10] PassengerId=412 -> 0 (Did not survive)
+[03/10] PassengerId=865 -> 0 (Did not survive)
+[04/10] PassengerId=502 -> 1 (Survived)
+[05/10] PassengerId=824 -> 1 (Survived)
+[06/10] PassengerId=352 -> 0 (Did not survive)
+[07/10] PassengerId=505 -> 1 (Survived)
+[08/10] PassengerId=533 -> 0 (Did not survive)
+[09/10] PassengerId=699 -> 0 (Did not survive)
+[10/10] PassengerId=72 -> 0 (Did not survive)
+Saved: /home/ubuntu/titanic_fastapi_assignment/streaming_predictions.csv

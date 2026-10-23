@@ -1,0 +1,23 @@
+BATCH INFERENCE — 20 held-out passengers predicted together
+ PassengerId  predicted_survival      prediction
+         474                   1        Survived
+         166                   0 Did not survive
+         825                   0 Did not survive
+         854                   1        Survived
+         753                   0 Did not survive
+          83                   1        Survived
+         350                   0 Did not survive
+         485                   1        Survived
+         388                   1        Survived
+          18                   0 Did not survive
+          66                   0 Did not survive
+         805                   0 Did not survive
+         554                   0 Did not survive
+         158                   0 Did not survive
+         387                   0 Did not survive
+         759                   0 Did not survive
+         556                   0 Did not survive
+         276                   1        Survived
+         537                   0 Did not survive
+         245                   0 Did not survive
+Saved: /home/ubuntu/titanic_fastapi_assignment/batch_predictions.csv

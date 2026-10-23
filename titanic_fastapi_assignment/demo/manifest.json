@@ -1,0 +1,40 @@
+{
+  "source": "stratified 20% test/hold-out portion of the supplied Kaggle train.csv",
+  "target_column_excluded": true,
+  "strategies_are_disjoint": true,
+  "online_passenger_id": 815,
+  "batch_passenger_ids": [
+    474,
+    166,
+    825,
+    854,
+    753,
+    83,
+    350,
+    485,
+    388,
+    18,
+    66,
+    805,
+    554,
+    158,
+    387,
+    759,
+    556,
+    276,
+    537,
+    245
+  ],
+  "streaming_passenger_ids": [
+    39,
+    412,
+    865,
+    502,
+    824,
+    352,
+    505,
+    533,
+    699,
+    72
+  ]
+}

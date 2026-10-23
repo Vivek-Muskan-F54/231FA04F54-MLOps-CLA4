@@ -1,0 +1,6 @@
+Python client POST /predict: HTTP 200
+{
+  "PassengerId": 815,
+  "predicted_survival": 0,
+  "prediction": "Did not survive"
+}
